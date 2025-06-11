@@ -1,22 +1,9 @@
-### Estrutura do Projeto:
-# workout_api/
-# ├── app/
-# │   ├── main.py
-# │   ├── routers/workouts.py
-# │   ├── models.py
-# │   ├── database.py
-# │   └── schemas.py
-# ├── Dockerfile
-# ├── docker-compose.yml
-# ├── requirements.txt
-# └── README.md
-
 # app/database.py
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./workouts.db"  # ou use postgres com docker-compose
+SQLALCHEMY_DATABASE_URL = "sqlite:///./workouts.db"  
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
